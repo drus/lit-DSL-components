@@ -1,4 +1,4 @@
-import {LitElement, html, css   } from 'lit';
+import {LitElement, html, css, unsafeCSS} from 'lit';
 
 export class DrusTryout001 extends LitElement{
 
@@ -54,10 +54,18 @@ export class DrusTryout001 extends LitElement{
         this.size=e.currentTarget.value;
     }
 
+    getDynamicStyles(){
+        return css`
+        background-color:#${unsafeCSS(this.color)};
+        width:${unsafeCSS(this.size)}vw;
+        height:${unsafeCSS(this.size)}vw;
+        `;
+    }
+
     render(){
         return html`
             <div>
-                <span style="background-color:#${this.color};width:${this.size}vw;height:${this.size}vw;"></span>
+                <span style="${this.getDynamicStyles()}"></span>
                 <input type="range" value="${this.size}" @input="${this.updateSize}" max="120" @mouseup="${this.onMouseUp}">
             </div>`;
     }
