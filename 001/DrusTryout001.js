@@ -42,7 +42,7 @@ export class DrusTryout001 extends LitElement{
         if(this.size){
             this.size-=1;
             input.stepDown();
-            setTimeout(this.resetSize, 10, input);
+            window.requestAnimationFrame(()=>this.resetSize(input));
         }
     }
 
@@ -66,7 +66,7 @@ export class DrusTryout001 extends LitElement{
         return html`
             <div>
                 <span style="${this.getDynamicStyles()}"></span>
-                <input type="range" value="${this.size}" @input="${this.updateSize}" max="120" @mouseup="${this.onMouseUp}">
+                <input type="range" value="${this.size}" @input="${this.updateSize}" max="120" step="1" @mouseup="${this.onMouseUp}">
             </div>`;
     }
 
