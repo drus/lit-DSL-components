@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <style>
+    html{
+        background: #fff;
+    }
+    section{
+        padding: 16px 0 4px 0;
+        margin-bottom: 8px;
+        border-top: 1px solid #ccc;
+    }
+
+    section:before{
+        content: '';
+        display: block;
+    }
+
+    header{
+        margin-bottom: 4px;
+    }
+
+    drus-chip{
+        margin-right:8px;
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <script type="module">
+    import '../drus-chip.js';
+  </script>
+
+<h1>Drus lit tryout: chip</h1>
+
+<section>
+  <drus-chip size="S" color="primary">primary <small>(s)</small></drus-chip>
+  <drus-chip size="S" color="secondary">secondary <small>(s)</small></drus-chip>
+  <drus-chip size="S" color="secondary" disabled>secondary disabled (s)</drus-chip>
+  <drus-chip size="S" color="secondary">secondary (s)</drus-chip>
+  <drus-chip size="S" color="primary" disabled>primary disabled (s)</drus-chip>
+  <drus-chip size="S" color="secondary">secondary (s)</drus-chip>
+  <drus-chip size="S" color="secondary">secondary (s)</drus-chip>
+  <drus-chip size="S" color="secondary">secondary (s)</drus-chip>
+</section>
+
+
+<section>
+  <drus-chip size="M" color="primary" shadow rounded>Capitán América (M)</drus-chip>
+  <drus-chip size="S" color="secondary" shadow rounded>Iron Man (S)</drus-chip>
+  <drus-chip size="XL" color="success" shadow rounded>Viuda Negra (XL)</drus-chip>
+  <drus-chip size="L" color="alert" shadow rounded>Thor (L)</drus-chip>
+  <drus-chip size="L" color="secondary" shadow rounded disabled>Vision (L)</drus-chip>
+</section>
+
+<section>
+  <drus-chip color="primary" shadow>Shadow primary</drus-chip>
+  <drus-chip color="secondary" shadow>Shadow secondary</drus-chip>
+  <drus-chip color="secondary" disabled shadow>Shadow disabled</drus-chip>
+</section>
+
+<section>
+  <drus-chip size="M" color="secondary" rounded>one</drus-chip>
+  <drus-chip size="M" color="secondary" rounded>two</drus-chip>
+  <drus-chip size="M" color="secondary" rounded>three</drus-chip>
+  <drus-chip size="M" color="secondary" rounded disabled>disabled</drus-chip>
+  <drus-chip size="M" color="secondary" rounded>five</drus-chip>
+</section>
+
+<section>
+  <drus-chip size="M" color="secondary" iconLeft="ok" rounded>iconLeft</drus-chip>
+  <drus-chip size="M" color="primary" iconRight="ok" rounded>iconRight</drus-chip>
+  <drus-chip size="M" color="secondary" iconLeft="ok" iconRight="ok" rounded>iconLeft & iconRight</drus-chip>
+</section>
+
+
+
+</body>
+</html>
