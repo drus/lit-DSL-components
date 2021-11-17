@@ -38,9 +38,7 @@
     "extends": [
       "@open-wc",
       "prettier"
-    ],
-    "parser": "@babel/eslint-parser",
-    "requireConfigFile":false
+    ]
   },
   "prettier": {
     "singleQuote": true,
@@ -52,7 +50,7 @@
     }
   },
   "lint-staged": {
-    "*.js": [
+    "*.jss": [
       "eslint --fix",
       "prettier --write"
     ]
