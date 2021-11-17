@@ -1,4 +1,4 @@
-import {LitElement, html, css, unsafeCSS} from 'lit';
+import {LitElement, html, nothing} from 'lit';
 import componentStyles from './DrusChip-styles';
 
 export class DrusChip extends LitElement{
@@ -7,19 +7,30 @@ export class DrusChip extends LitElement{
         return componentStyles;
     };
     
-    /* 
-    static properties={
     
+    static properties={
+        iconLeft:{type:String},
+        iconRight:{type:String}
     } 
-    */
+   
 
     constructor(){
         super();
     }
 
+    getIconTemplate(iconId){
+        return iconId ? html`<span>${iconId}</span>` : nothing;
+    }
+
 
     render(){
-        return html`<span><slot></slot></span>`;
+        const iconLeft=this.getIconTemplate(this.iconLeft);
+        const iconRight=this.getIconTemplate(this.iconRight);
+        return html`<span>
+            ${iconLeft}
+            <slot></slot>
+            ${iconRight}
+        </span>`;
     }
 
 }

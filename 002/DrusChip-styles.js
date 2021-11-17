@@ -71,6 +71,7 @@ export default css`
         pointer-events:none;
     }
 
+    /* 
     :host([icon-left]):before{
         margin-right:4px;
     }
@@ -86,4 +87,5 @@ export default css`
     :host([icon-right="ok"]):after{
         content:'👍';
     }
+     */
 `;
