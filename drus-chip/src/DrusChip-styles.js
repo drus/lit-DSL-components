@@ -7,13 +7,12 @@ export default css`
         display:inline-block;
         text-transform:upperCase;
         cursor:default;
+        font-size:16px;
 
-        --font-size:16px;
         --padding:0.3em 0.8em;
         --background-color:#cc1111;
         --color:white;
 
-        font-size:var(--font-size);
         padding:var(--padding);
         background-color:var(--background-color);
         color:var(--color);
@@ -28,19 +27,18 @@ export default css`
     }
 
     :host([size="S"]){
-        --font-size:12px;
+        font-size:12px;
     }
+
+    /* :host([size="M"]) fall in default */
 
     :host([size="L"]){
-        --font-size:20px;
+        font-size:20px;
     }
 
-    :host([size="M"]){
-        /* fall in default */
-    }
 
     :host([size="XL"]){
-        --font-size:24px;
+        font-size:24px;
     }
 
     :host([color="primary"]){

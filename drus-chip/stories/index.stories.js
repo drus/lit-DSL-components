@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import '../drus-chip.js';
+import '../index.js';
 
 export default {
   title: 'DrusChip',
@@ -13,6 +13,9 @@ export default {
     color: 'primary',
   },
   argTypes: {
+    showCloseButton:{
+      control:{ type:'boolean' }
+    },
     size: {
       options: ['S', 'M', 'L', 'XL'],
       control: { type: 'select' },
@@ -28,11 +31,11 @@ export default {
       control: { type: 'boolean' },
     },
     iconLeft: {
-      options: ['', '👍', '🤓'],
+      options: ['', 'ok', 'nerd'],
       control: { type: 'select' },
     },
     iconRight: {
-      options: ['', '👎', '😎'],
+      options: ['', 'ko', 'rock'],
       control: { type: 'select' },
     },
     disabled: {
@@ -53,6 +56,7 @@ function Template({
   shadow,
   iconLeft,
   iconRight,
+  showCloseButton
 }) {
   return html`
     <drus-chip
@@ -61,8 +65,9 @@ function Template({
       ?rounded=${rounded}
       ?shadow=${shadow}
       ?disabled=${disabled}
-      iconLeft=${iconLeft}
-      iconRight=${iconRight}
+      ?show-close-button=${showCloseButton}
+      icon-left=${iconLeft}
+      icon-right=${iconRight}
     >
       ${slot}
     </drus-chip>

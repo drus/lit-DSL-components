@@ -1,6 +1,12 @@
 import { html, nothing, LitElement } from 'lit';
 import componentStyles from './DrusIcon-styles.js';
 
+const ICON_LIST = {
+  ok: '👍',
+  ko: '👎',
+  rock: '🤟',
+  nerd: '🤓',
+};
 export class DrusIcon extends LitElement {
   static get styles() {
     return componentStyles;
@@ -12,23 +18,20 @@ export class DrusIcon extends LitElement {
     };
   }
 
-  /* constructor() {
+  constructor() {
     super();
-  } */
-  static get iconList() {
-    return {
-      ok: '👍',
-      ko: '👎',
-      rock: '🤟',
-      nerd: '🤓',
-    };
+    this.id = undefined;
   }
 
-  get icon() {
-    return DrusIcon.iconList[this.id];
+  get _icon() {
+    return ICON_LIST[this.id];
+  }
+
+  get _iconTemplate() {
+    return html`<span class="icon">${this._icon}</span>`;
   }
 
   render() {
-    return this.icon ? html` <span>${this.icon}</span> ` : nothing;
+    return this._icon ? this._iconTemplate : nothing;
   }
 }

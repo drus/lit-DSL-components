@@ -1,0 +1,174 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "drus-chip",
+          "declaration": {
+            "name": "DrusChip",
+            "module": "/src/DrusChip.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/DrusChip-styles.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/DrusChip-styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/DrusChip.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "DrusChip",
+          "members": [
+            {
+              "kind": "method",
+              "name": "getIconTemplate",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "iconId"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onCloseClick",
+              "parameters": [
+                {
+                  "name": "event"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "_closeButtonTemplate"
+            },
+            {
+              "kind": "field",
+              "name": "showCloseButton",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "privacy": "public",
+              "attribute": "show-close-button"
+            },
+            {
+              "kind": "field",
+              "name": "iconLeft",
+              "privacy": "public",
+              "attribute": "icon-left"
+            },
+            {
+              "kind": "field",
+              "name": "iconRight",
+              "privacy": "public",
+              "attribute": "icon-right"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "icon-left",
+              "fieldName": "iconLeft"
+            },
+            {
+              "name": "icon-right",
+              "fieldName": "iconRight"
+            },
+            {
+              "name": "show-close-button",
+              "fieldName": "showCloseButton"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "drus-chip",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DrusChip",
+          "declaration": {
+            "name": "DrusChip",
+            "module": "src/DrusChip.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "stories/index.stories.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Chip"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "stories/index.stories.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Chip",
+          "declaration": {
+            "name": "Chip",
+            "module": "stories/index.stories.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "test/__snapshots__/drus-chip.test.snap.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "snapshots",
+          "type": {
+            "text": "object"
+          },
+          "default": "{}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "snapshots",
+          "declaration": {
+            "name": "snapshots",
+            "module": "test/__snapshots__/drus-chip.test.snap.js"
+          }
+        }
+      ]
+    }
+  ]
+}

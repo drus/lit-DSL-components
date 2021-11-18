@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "drus-icon.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "drus-icon",
+          "declaration": {
+            "name": "DrusIcon",
+            "module": "/src/DrusIcon.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DrusIcon",
+          "declaration": {
+            "name": "DrusIcon",
+            "module": "./src/DrusIcon.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/DrusIcon-styles.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/DrusIcon-styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/DrusIcon.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "DrusIcon",
+          "members": [
+            {
+              "kind": "field",
+              "name": "_icon"
+            },
+            {
+              "kind": "field",
+              "name": "_iconTemplate"
+            },
+            {
+              "kind": "field",
+              "name": "id",
+              "default": "undefined",
+              "privacy": "public",
+              "attribute": "id"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "id",
+              "fieldName": "id"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "drus-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DrusIcon",
+          "declaration": {
+            "name": "DrusIcon",
+            "module": "src/DrusIcon.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "stories/index.stories.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Icon"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "stories/index.stories.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Icon",
+          "declaration": {
+            "name": "Icon",
+            "module": "stories/index.stories.js"
+          }
+        }
+      ]
+    }
+  ]
+}
