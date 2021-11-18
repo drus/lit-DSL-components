@@ -4,45 +4,62 @@ import '../drus-chip.js';
 export default {
   title: 'DrusChip',
   component: 'drus-chip',
-  args:{
-    size:'M',
-    slot:'drus chip',
-    disabled:false,
-    color:'primary'
+  args: {
+    size: 'M',
+    slot: 'drus chip',
+    disabled: false,
+    shadow: false,
+    rounded: false,
+    color: 'primary',
   },
   argTypes: {
     size: {
       options: ['S', 'M', 'L', 'XL'],
-      control: { type: 'select' }
-     },
+      control: { type: 'select' },
+    },
     color: {
       options: ['primary', 'secondary', 'success', 'alert'],
-      control: { type: 'select' }
+      control: { type: 'select' },
     },
-    disabled:{
-      control:{type:'boolean'}
+    rounded: {
+      control: { type: 'boolean' },
     },
-    iconLeft:{
-      options:['','👍', '🤓'],
-      control:{type:'select'}
+    shadow: {
+      control: { type: 'boolean' },
     },
-    iconRight:{
-      options:['','👎', '😎'],
-      control:{type:'select'}
+    iconLeft: {
+      options: ['', '👍', '🤓'],
+      control: { type: 'select' },
     },
-    slot:{
-      control:'text'
-    }
+    iconRight: {
+      options: ['', '👎', '😎'],
+      control: { type: 'select' },
+    },
+    disabled: {
+      control: { type: 'boolean' },
+    },
+    slot: {
+      control: 'text',
+    },
   },
 };
 
-function Template({ size, color, slot, disabled, iconLeft, iconRight }) {
-
-
+function Template({
+  size,
+  color,
+  slot,
+  disabled,
+  rounded,
+  shadow,
+  iconLeft,
+  iconRight,
+}) {
   return html`
     <drus-chip
       size=${size}
       color=${color}
+      ?rounded=${rounded}
+      ?shadow=${shadow}
       ?disabled=${disabled}
       iconLeft=${iconLeft}
       iconRight=${iconRight}
@@ -52,34 +69,4 @@ function Template({ size, color, slot, disabled, iconLeft, iconRight }) {
   `;
 }
 
-export const Chip=Template.bind({});
-
-/*
-export const Regular =
-Regular.args = {
-  size: 'L',
-  slot: 'Slotted content',
-  variant:'primary'
-}; */
-/*
-
-Regular.argTypes = {
-  variant: {
-    options: ['primary', 'secondary'],
-    control: { type: 'radio' }
-  }
-};
-
-export const CustomType = Template.bind({});
-CustomType.args = {
-  type: 'primary',
-};
-
-export const SlottedContent = Template.bind({});
-SlottedContent.args = {
-  slot: 'Slotted content',
-};
-SlottedContent.argTypes = {
-  slot: { table: { disable: true } },
-};
- */
+export const Chip = Template.bind({});

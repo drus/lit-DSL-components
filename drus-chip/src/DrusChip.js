@@ -1,39 +1,33 @@
-import {LitElement, html, nothing} from 'lit';
-import componentStyles from './DrusChip-styles';
+import { LitElement, html, nothing } from 'lit';
+import componentStyles from './DrusChip-styles.js';
 
-export class DrusChip extends LitElement{
+export class DrusChip extends LitElement {
+  static get styles() {
+    return componentStyles;
+  }
 
-    static get styles(){
-        return componentStyles;
+  static get properties() {
+    return {
+      iconLeft: { type: String },
+      iconRight: { type: String },
     };
+  }
 
-
-    static properties = {
-        iconLeft:{type:String},
-        iconRight:{type:String}
-    }
-
-
-    constructor(){
+  /* constructor(){
         super();
-    }
+    } */
 
+  static getIconTemplate(iconId) {
+    return html`<span id="${iconId}">${iconId}</span>`;
+  }
 
-    getIconTemplate(iconId){
-        return html`<span id="${iconId}">${iconId}</span>`;
-    }
-
-
-    render(){
-        const iconLeft=this.getIconTemplate(this.iconLeft);
-        const iconRight=this.getIconTemplate(this.iconRight);
-        return html`<span>
-            ${this.iconLeft ? iconLeft : nothing}
-            <slot></slot>
-            ${this.iconRight ? iconRight : nothing}
-        </span>`;
-    }
-
+  render() {
+    const iconLeft = DrusChip.getIconTemplate(this.iconLeft);
+    const iconRight = DrusChip.getIconTemplate(this.iconRight);
+    return html`<span>
+      ${this.iconLeft ? iconLeft : nothing}
+      <slot></slot>
+      ${this.iconRight ? iconRight : nothing}
+    </span>`;
+  }
 }
-
-
