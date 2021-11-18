@@ -18,7 +18,8 @@ export class DrusChip extends LitElement {
     } */
 
   static getIconTemplate(iconId) {
-    return html`<span id="${iconId}">${iconId}</span>`;
+    // return html`<span id="${iconId}">${iconId}</span>`;
+    return html`<drus-icon id="${iconId}"></drus-icon>`;
   }
 
   render() {
