@@ -1,12 +1,7 @@
 import { html, nothing, LitElement } from 'lit';
 import componentStyles from './DrusIcon-styles.js';
+import ICON_LIST from './IconList.js';
 
-const ICON_LIST = {
-  ok: '👍',
-  ko: '👎',
-  rock: '🤟',
-  nerd: '🤓',
-};
 export class DrusIcon extends LitElement {
   static get styles() {
     return componentStyles;
@@ -15,6 +10,7 @@ export class DrusIcon extends LitElement {
   static get properties() {
     return {
       id: { type: String },
+      size: { type: String },
     };
   }
 

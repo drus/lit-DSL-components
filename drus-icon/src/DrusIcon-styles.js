@@ -1,21 +1,25 @@
 import { css } from 'lit';
 
 export default css`
-  .icon {
-    font-size: 16px;
+  :host svg {
+    width: 16px;
+    height: 16px;
   }
 
-  .icon([size='S']) {
-    font-size: 12px;
+  :host([size='S']) svg {
+    width: 12px;
+    height: 12px;
   }
 
-  /* .icon([size='M']) fall in default */
+  /* :host([size="M"]) fall in default */
 
-  .icon([size='L']) {
-    font-size: 20px;
+  :host([size='L']) svg {
+    width: 20px;
+    height: 20px;
   }
 
-  .icon([size='XL']) {
-    font-size: 24px;
+  :host([size='XL']) svg {
+    width: 24px;
+    height: 24px;
   }
 `;
