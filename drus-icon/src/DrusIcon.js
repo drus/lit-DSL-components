@@ -9,18 +9,26 @@ export class DrusIcon extends LitElement {
 
   static get properties() {
     return {
-      id: { type: String },
-      size: { type: String },
+      iconId: {
+        type: String,
+        attribute:'icon-id'
+      },
+      size: {
+        type: String,
+        reflect:true
+       },
     };
   }
 
   constructor() {
     super();
-    this.id = undefined;
+    this.iconId = undefined;
+    this.size=undefined;
   }
 
+
   get _icon() {
-    return ICON_LIST[this.id];
+    return ICON_LIST[this.iconId];
   }
 
   get _iconTemplate() {
