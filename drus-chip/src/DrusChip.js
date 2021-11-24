@@ -57,7 +57,7 @@ export class DrusChip extends LitElement {
   }
 
   _onCloseClick(event){
-    console.log('close', event);
+    this.dispatchEvent(new CustomEvent('drus-chip-close-click'));
   }
 
   get _closeButtonTemplate(){
