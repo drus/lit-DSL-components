@@ -3,15 +3,14 @@ import { css } from "lit";
 export default css`
 
     :host{
-
-        display:inline-block;
-        text-transform:upperCase;
-        cursor:default;
-        font-size:16px;
-
         --padding:0.3em 0.8em;
         --background-color:#cc1111;
         --color:white;
+
+        display:inline-block;
+        text-transform:uppercase;
+        cursor:default;
+        font-size:16px;
 
         padding:var(--padding);
         background-color:var(--background-color);
@@ -70,21 +69,4 @@ export default css`
         pointer-events:none;
     }
 
-    /*
-    :host([icon-left]):before{
-        margin-right:4px;
-    }
-
-    :host([icon-right]):after{
-        margin-left:4px;
-    }
-
-    :host([icon-left="ok"]):before{
-        content:'👍';
-    }
-
-    :host([icon-right="ok"]):after{
-        content:'👍';
-    }
-     */
 `;

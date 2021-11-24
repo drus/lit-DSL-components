@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 
-import '../drus-chip.js';
+import '../index.js';
 
 describe('DrusChip', () => {
 
@@ -31,33 +31,7 @@ describe('DrusChip', () => {
     expect(el).shadowDom.to.equalSnapshot();
   });
 
-  it('renders left icon correctly', async () => {
-    const el = await fixture(`<drus-chip iconLeft="iconId">Message</drus-chip>`);
-    expect(el).shadowDom.to.equalSnapshot();
-  });
 
-  it('renders right icon correctly', async () => {
-    const el = await fixture(`<drus-chip iconRight="iconId">Message</drus-chip>`);
-    expect(el).shadowDom.to.equalSnapshot();
-  });
-
-  it('renders left and right icon correctly', async () => {
-    const el = await fixture(`<drus-chip iconLeft="iconLeftId" iconRight="iconRightId">Message</drus-chip>`);
-    expect(el).shadowDom.to.equalSnapshot();
-  });
-
-
-/*   it('can set the left icon via attribute', async () => {
-    const el = await fixture(html`<drus-chip iconLeft="iconId"></drus-chip>`);
-    const icon=el.shadowRoot.querySelector('#iconId');
-    expect(icon);
-  });
-
-  it('can set the right icon via attribute', async () => {
-    const el = await fixture(html`<drus-chip iconRight="iconId"></drus-chip>`);
-    const icon=el.shadowRoot.querySelector('#iconId');
-    expect(icon);
-  }); */
 
   it('color primary passes the a11y audit', async () => {
     const el = await fixture(html`<drus-chip color="primary">Message</drus-chip>`);
@@ -71,12 +45,22 @@ describe('DrusChip', () => {
     expect(el).shadowDom.to.be.accessible();
   });
 
-  it('color disabled passes the a11y audit', async () => {
-    const el = await fixture(html`<drus-chip color="primary" disabled>Message</drus-chip>`);
+  describe('styles', ()=>{
+    it('computed styles property when default', async ()=>{
+      const el = await fixture(html`<drus-chip>Message</drus-chip>`);
+      const computedStyles=window.getComputedStyle(el);
+      expect(computedStyles.display.trim()).to.be.equal('inline-block');
+      expect(computedStyles.textTransform.trim()).to.be.equal('uppercase');
+      expect(computedStyles.cursor.trim()).to.be.equal('default');
+      expect(computedStyles.fontSize.trim()).to.be.equal('16px');
+      expect(computedStyles.padding.trim()).to.be.equal('4.8px 12.8px');
+      expect(computedStyles.backgroundColor.trim()).to.be.equal('rgb(204, 17, 17)');
+      expect(computedStyles.color.trim()).to.be.equal('rgb(255, 255, 255)');
 
-    expect(el).shadowDom.to.be.accessible();
+    });
+
   });
 
 
-
 });
+

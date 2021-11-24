@@ -18,10 +18,12 @@ export class DrusChip extends LitElement {
   static get properties() {
     return {
       size:{
-        type:String
+        type:String,
+        reflect:true
       },
       disabled:{
-        type:Boolean
+        type:Boolean,
+        reflect:true
       },
       iconLeft: {
         type: String,
@@ -51,12 +53,12 @@ export class DrusChip extends LitElement {
       return ICON_SIZES[this.size] || ICON_SIZES.M;
     }
 
-  static getIconTemplate(iconId) {
-    // return html`<span id="${iconId}">${iconId}</span>`;
-    return html`<drus-icon id="${iconId}" size="${this._iconSize}"></drus-icon>`;
+  _getIconTemplate(iconId) {
+    return html`<drus-icon icon-id="${iconId}" size="${this._iconSize}"></drus-icon>`;
   }
 
   _onCloseClick(event){
+    event.stopPropagation();
     this.dispatchEvent(new CustomEvent('drus-chip-close-click'));
   }
 
@@ -73,12 +75,14 @@ export class DrusChip extends LitElement {
 
 
   render() {
-    const iconLeft = DrusChip.getIconTemplate(this.iconLeft);
-    const iconRight = DrusChip.getIconTemplate(this.iconRight);
+
     return html`<span>
-      ${this.iconLeft ? iconLeft : nothing}
+      ${this.iconLeft ? this._getIconTemplate(this.iconLeft) : nothing}
+
       <slot></slot>
-      ${this.iconRight ? iconRight : nothing}
+
+      ${this.iconRight ? this._getIconTemplate(this.iconRight) : nothing}
+
       ${this.showCloseButton ? this._closeButtonTemplate : nothing}
     </span>`;
   }
