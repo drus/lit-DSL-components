@@ -6,8 +6,12 @@
     body {
       background: #fafafa;
     }
+    .mb{
+      margin-bottom: 20px;
+    }
     drus-button{
       margin: 0 5px 5px 0;
+      vertical-align: top;
     }
   </style>
 </head>
@@ -15,27 +19,47 @@
   <script type="module">
     import '../drus-button.js';
   </script>
-  <drus-button>Primary</drus-button>
-  <drus-button shadow>Shadow</drus-button>
-  <drus-button color="success">sign in</drus-button>
-  <drus-button color="alert">delete</drus-button>
-  <drus-button color="secondary" rounded>rounded</drus-button>
-  <drus-button ghost>Ghost button</drus-button>
-  <p>Sizes</p>
-  <drus-button size="S">size S</drus-button>
-  <drus-button size="M">size M</drus-button>
-  <drus-button size="L">size L</drus-button>
-  <drus-button size="XL">size XL</drus-button>
-  <p>State</p>
-  <drus-button disabled>disabled</drus-button>
-  <p>Icon</p>
+  <div class="mb">
+    <drus-button>Primary</drus-button>
+    <drus-button shadow>Shadow</drus-button>
+    <drus-button color="success">sign in</drus-button>
+    <drus-button color="alert">delete</drus-button>
+    <drus-button color="secondary" rounded>rounded</drus-button>
+    <drus-button ghost>Ghost button</drus-button>
+  </div>
+  <div class="mb">
+    <drus-button size="S">size S</drus-button>
+    <drus-button size="M">size M</drus-button>
+    <drus-button size="L">size L</drus-button>
+    <drus-button size="XL">size XL</drus-button>
+  </div>
+  <div class="mb">
+    <drus-button disabled>disabled</drus-button>
+  </div>
 
-  <drus-button color="secondary" size="XL" icon="ok" shadow>OK</drus-button>
-  <drus-button color="secondary" size="XL" icon="ko" shadow>OK</drus-button>
-  <drus-button color="secondary" size="XL" icon="rock" shadow>OK</drus-button>
-  <drus-button color="secondary" size="XL" icon="nerd" shadow>OK</drus-button>
-  <drus-button color="secondary" size="XL" icon="crack" shadow>OK</drus-button>
-  <drus-button icon-left="ok" rounded>iconLeft</drus-button>
-  <drus-button icon-right="ko" rounded>iconRight</drus-button>
+  <div class="mb">
+    <drus-button color="secondary" size="XL" icon="ok" title="ok title">OK</drus-button>
+    <drus-button color="secondary" size="XL" icon="ko">OK</drus-button>
+    <drus-button color="secondary" size="XL" icon="rock">OK</drus-button>
+    <drus-button color="secondary" size="XL" icon="nerd">OK</drus-button>
+    <drus-button color="secondary" size="XL" icon="crack">OK</drus-button>
+    <drus-button color="primary" size="XL" icon="crack" shadow>OK</drus-button>
+  </div>
+  <div class="mb">
+    <drus-button size="S" icon-right="ok" rounded>icon right</drus-button>
+    <drus-button size="M" icon-right="ko" rounded>icon right</drus-button>
+    <drus-button size="L" icon-right="rock" rounded>icon right</drus-button>
+    <drus-button size="XL" icon-right="nerd" rounded>icon right</drus-button>
+  </div>
+  <div class="mb">
+    <drus-button size="S" icon-left="ok" rounded>icon left</drus-button>
+    <drus-button size="M" icon-left="ko" rounded>icon left</drus-button>
+    <drus-button size="L" icon-left="rock" rounded>icon left</drus-button>
+    <drus-button size="XL" icon-left="nerd" rounded>icon left</drus-button>
+  </div>
+  <div class="mb">
+    <drus-button icon-left="ok" rounded>icon</drus-button>
+    <drus-button icon-right="ko" rounded>icon</drus-button>
+  </div>
 </body>
 </html>
