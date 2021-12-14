@@ -1,7 +1,9 @@
 import { css } from 'lit';
 
 export default css`
+
   :host svg {
+    display:block;
     width: 16px;
     height: 16px;
   }

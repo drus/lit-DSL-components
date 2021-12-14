@@ -29,6 +29,9 @@ export class DrusButton extends LitElement {
         type: String,
         attribute: 'icon-right',
       },
+      icon: {
+        type: String,
+      },
     };
   }
 
@@ -52,8 +55,11 @@ export class DrusButton extends LitElement {
     return html`
       <button ?disabled=${this.disabled}>
         ${this.iconLeft ? this._getIconTemplate(this.iconLeft) : nothing}
+        ${this.icon ? this._getIconTemplate(this.icon) : nothing}
 
-        <slot></slot>
+        <span class="content">
+          <slot></slot>
+        </span>
 
         ${this.iconRight ? this._getIconTemplate(this.iconRight) : nothing}
       </button>
