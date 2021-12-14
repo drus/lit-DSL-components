@@ -17,10 +17,6 @@ export class DrusButton extends LitElement {
         type: String,
         reflect: true,
       },
-      disabled: {
-        type: Boolean,
-        reflect: true,
-      },
       iconLeft: {
         type: String,
         attribute: 'icon-left',
@@ -39,7 +35,6 @@ export class DrusButton extends LitElement {
     super();
     this.size = undefined;
     this.rounded = undefined;
-    this.disabled = false;
     this.iconLeft = undefined;
     this.iconRight = undefined;
   }
@@ -53,7 +48,7 @@ export class DrusButton extends LitElement {
 
   render() {
     return html`
-      <button ?disabled=${this.disabled}>
+      <span class="wrapper">
         ${this.iconLeft ? this._getIconTemplate(this.iconLeft) : nothing}
         ${this.icon ? this._getIconTemplate(this.icon) : nothing}
 
@@ -62,7 +57,7 @@ export class DrusButton extends LitElement {
         </span>
 
         ${this.iconRight ? this._getIconTemplate(this.iconRight) : nothing}
-      </button>
+      </span>
     `;
   }
 }

@@ -2,14 +2,15 @@ import { css } from 'lit';
 
 export default css`
   :host {
-    position: relative;
-    display: inline-block;
+    /* position: relative; */
+    /* display: inline-block; */
     --padding: 0.3em 1em;
     --background-color: #cc1111;
     --color: white;
   }
 
-  :host button {
+  :host .wrapper {
+    position: relative;
     line-height: 1.2;
     text-transform: uppercase;
     cursor: pointer;
@@ -23,7 +24,7 @@ export default css`
     border: none;
   }
 
-  :host(:not([disabled]):hover) button:after {
+  :host(:not([disabled]):hover) .wrapper:after {
     content: '';
     background-color: #ff0000;
     position: absolute;
@@ -39,7 +40,7 @@ export default css`
     --padding: 0.6em;
   }
 
-  :host([icon]) button {
+  :host([icon]) .wrapper {
     border-radius: 50%;
   }
 
@@ -55,39 +56,39 @@ export default css`
     white-space: nowrap;
   }
 
-  :host([icon-left]) button,
-  :host([icon-right]) button {
+  :host([icon-left]) .wrapper,
+  :host([icon-right]) .wrapper {
     display: flex;
     align-items: center;
   }
 
-  :host([icon-left]) button drus-icon {
+  :host([icon-left]) .wrapper drus-icon {
     margin-right: 8px;
   }
 
-  :host([icon-right]) button drus-icon {
+  :host([icon-right]) .wrapper drus-icon {
     margin-left: 8px;
   }
 
-  :host([shadow]) button {
-    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.5);
+  :host([shadow]) .wrapper {
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.5);
   }
 
-  :host([rounded]) button {
+  :host([rounded]) .wrapper {
     border-radius: 4px;
   }
 
-  :host([size='S']) button {
+  :host([size='S']) .wrapper {
     font-size: 12px;
   }
 
-  /* :host([size="M"]) fall in default ) button */
+  /* :host([size="M"]) fall in default ) .wrapper */
 
-  :host([size='L']) button {
+  :host([size='L']) .wrapper {
     font-size: 20px;
   }
 
-  :host([size='XL']) button {
+  :host([size='XL']) .wrapper {
     font-size: 24px;
   }
 
@@ -118,7 +119,7 @@ export default css`
 
   /* STATE */
 
-  :host([disabled]) button {
+  :host([disabled]) .wrapper {
     background-color: #00000022;
     color: #616161;
     box-shadow: none;
