@@ -8,6 +8,7 @@ export default css`
     --background-color: #cc1111;
     --color: white;
   }
+
   :host button {
     line-height: 1.2;
     text-transform: uppercase;
@@ -69,7 +70,7 @@ export default css`
   }
 
   :host([shadow]) button {
-    box-shadow: 0 2px 10px 2px #666666cc;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.5);
   }
 
   :host([rounded]) button {
