@@ -1,6 +1,7 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 
+import { colors } from '../src/DrusAvatarColors.js';
 import '../drus-avatar.js';
 
 describe('DrusAvatar', () => {
@@ -40,26 +41,19 @@ describe('DrusAvatar', () => {
     expect(el).shadowDom.to.equalSnapshot();
   });
 
-  /*
-
-  it('increases the counter on button click', async () => {
-    const el = await fixture(html`<drus-avatar></drus-avatar>`);
-    el.shadowRoot.querySelector('button').click();
-
-    expect(el.counter).to.equal(6);
-  });
-
-  it('can override the title via attribute', async () => {
-    const el = await fixture(html`<drus-avatar title="attribute title"></drus-avatar>`);
-
-    expect(el.title).to.equal('attribute title');
-  }); */
-
   it('passes the a11y audit', async () => {
-    const el = await fixture(
-      html`<drus-avatar username="drus" color="white"></drus-avatar>`
-    );
+    const el = await fixture(html`<drus-avatar username="drus"></drus-avatar>`);
 
     await expect(el).shadowDom.to.be.accessible();
+  });
+
+  const colorValues = Object.values(colors);
+  colorValues.forEach(color => {
+    it(`passes the a11y audit with color ${color}`, async () => {
+      const el = await fixture(
+        html`<drus-avatar username="drus" color="${color}"></drus-avatar>`
+      );
+      await expect(el).shadowDom.to.be.accessible();
+    });
   });
 });

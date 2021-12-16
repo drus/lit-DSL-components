@@ -44,7 +44,6 @@ export class DrusAvatar extends LitElement {
   }
 
   render() {
-    console.log('initials', this._initialCharacters);
     return html`
       <style>
         span {
