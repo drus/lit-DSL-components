@@ -6,24 +6,60 @@
     body {
       background: #fafafa;
     }
+    .mb{
+      margin-bottom: 8px;
+    }
+    drus-avatar{
+      vertical-align: middle;
+      margin: 4px;
+    }
+
   </style>
 </head>
 <body>
-  <div id="demo"></div>
-
   <script type="module">
-    import { html, render } from 'lit';
-    import '../drus-avatar.js';
-
-    const title = 'Hello owc World!';
-    render(
-      html`
-        <drus-avatar .title=${title}>
-          some light-dom
-        </drus-avatar>
-      `,
-      document.querySelector('#demo')
-    );
+    import "../drus-avatar.js";
   </script>
+
+<div class="mb">
+  <drus-avatar username="drusunlimited" size="S" color="color01"></drus-avatar>
+  <drus-avatar username="drusunlimited" size="M" color="color01"></drus-avatar>
+  <drus-avatar username="drusunlimited" size="L" color="color01"></drus-avatar>
+  <drus-avatar username="drusunlimited" size="XL" color="color01"></drus-avatar>
+</div>
+<div class="mb">
+  <drus-avatar username="Willy Sans" size="S" color="color02"></drus-avatar>
+  <drus-avatar username="Willy Sans" size="M" color="color02"></drus-avatar>
+  <drus-avatar username="Willy Sans" size="L" color="color02"></drus-avatar>
+  <drus-avatar username="Willy Sans" size="XL" color="color02"></drus-avatar>
+</div>
+<div class="mb">
+  <drus-avatar username="Hugo Pérez" size="S" color="color03"></drus-avatar>
+  <drus-avatar username="Hugo Pérez" size="M" color="color03"></drus-avatar>
+  <drus-avatar username="Hugo Pérez" size="L" color="color03"></drus-avatar>
+  <drus-avatar username="Hugo Pérez" size="XL" color="color03"></drus-avatar>
+</div>
+<div class="mb">
+  <drus-avatar username="Ana Luque" size="S" color="color04"></drus-avatar>
+  <drus-avatar username="Ana Luque" size="M" color="color04"></drus-avatar>
+  <drus-avatar username="Ana Luque" size="L" color="color04"></drus-avatar>
+  <drus-avatar username="Ana Luque" size="XL" color="color04"></drus-avatar>
+</div>
+<div class="mb">
+  <drus-avatar username="Megan Pfeiffer" size="S" color="color05"></drus-avatar>
+  <drus-avatar username="Megan Pfeiffer" size="M" color="color05"></drus-avatar>
+  <drus-avatar username="Megan Pfeiffer" size="L" color="color05"></drus-avatar>
+  <drus-avatar username="Megan Pfeiffer" size="XL" color="color05"></drus-avatar>
+</div>
+<div class="mb">
+  <drus-avatar username="Javier Fernandez" size="S" color="color05"></drus-avatar>
+  <drus-avatar username="Javier Fernandez" size="M" color="color06"></drus-avatar>
+  <drus-avatar username="Javier Fernandez" size="L" color="color07"></drus-avatar>
+  <drus-avatar username="Javier Fernandez" size="XL" color="color08"></drus-avatar>
+</div>
+<div class="mb">
+  <drus-avatar></drus-avatar>
+</div>
+
 </body>
 </html>

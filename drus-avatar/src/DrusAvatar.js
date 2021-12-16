@@ -1,5 +1,6 @@
-import { html, css, LitElement } from 'lit';
-import componentStyles from './DrusAvatar-styles';
+import { html, LitElement } from 'lit';
+import componentStyles from './DrusAvatar-styles.js';
+import { colors } from './DrusAvatarColors.js';
 
 export class DrusAvatar extends LitElement {
   static get styles() {
@@ -8,25 +9,51 @@ export class DrusAvatar extends LitElement {
 
   static get properties() {
     return {
-      title: { type: String },
-      counter: { type: Number },
+      username: {
+        type: String,
+      },
+      size: {
+        type: String,
+      },
+      color: {
+        type: String,
+      },
     };
   }
 
   constructor() {
     super();
-    this.title = 'Hey there';
-    this.counter = 5;
+    this.username = undefined;
+    this.size = undefined;
+    this.color = undefined;
   }
 
-  __increment() {
-    this.counter += 1;
+  get _hexColor() {
+    return colors[this.color] || colors.default;
+  }
+
+  get _initialCharacters() {
+    const words = this.username
+      ? this.username.toUpperCase().split(' ').slice(0, 2)
+      : '';
+    const initials = [...words].reduce(
+      (accumulator, word) => accumulator + [...word][0],
+      ''
+    );
+    return initials;
   }
 
   render() {
+    console.log('initials', this._initialCharacters);
     return html`
-      <h2>${this.title} Nr. ${this.counter}!</h2>
-      <button @click=${this.__increment}>increment</button>
+      <style>
+        span {
+          --drus-avatar-color: ${this._hexColor};
+        }
+      </style>
+      <span class="wrapper" title="${this.username}">
+        <span class="initials">${this._initialCharacters || '·'}</span>
+      </span>
     `;
   }
 }
