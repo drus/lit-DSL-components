@@ -5,14 +5,18 @@ import '../drus-avatar.js';
 describe('DrusAvatar + size', () => {
   const elementFixture = size =>
     fixture(
-      `<drus-avatar username="drus unlimited" size="${size}></drus-avatar>`
+      size ?
+      `<drus-avatar username="drus unlimited" size="${size}"></drus-avatar>`
+      : `<drus-avatar username="drus unlimited"></drus-avatar>`
     );
-  it('renders size S correctly', async () => {
-    const el = await elementFixture('S');
-    expect(el).shadowDom.to.equalSnapshot();
-    expect(el).lightDom.to.equalSnapshot();
-    expect(el).dom.to.equalSnapshot();
-  });
+
+    it('renders size S correctly', async () => {
+      const el = await elementFixture('S');
+      expect(el).shadowDom.to.equalSnapshot();
+      expect(el).lightDom.to.equalSnapshot();
+      expect(el).dom.to.equalSnapshot();
+    });
+
 
   it('renders size M correctly', async () => {
     const el = await elementFixture('M');
@@ -28,12 +32,26 @@ describe('DrusAvatar + size', () => {
     expect(el).dom.to.equalSnapshot();
   });
 
+  it('renders invalid size correctly', async () => {
+    const el = await elementFixture('invalid size');
+    expect(el).shadowDom.to.equalSnapshot();
+    expect(el).lightDom.to.equalSnapshot();
+    expect(el).dom.to.equalSnapshot();
+  });
+
   it('renders default size correctly', async () => {
     const el = await elementFixture();
     expect(el).shadowDom.to.equalSnapshot();
     expect(el).lightDom.to.equalSnapshot();
     expect(el).dom.to.equalSnapshot();
   });
-  /*
-   */
+
 });
+
+
+
+
+/*
+
+
+*/

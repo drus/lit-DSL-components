@@ -5,12 +5,34 @@ import { colors } from '../src/DrusAvatarColors.js';
 import '../drus-avatar.js';
 
 describe('DrusAvatar', () => {
-  it('show two capitalized initials based on username property', async () => {
+  it('show two capitalized initials based on two words username property', async () => {
     const el = await fixture(
       html`<drus-avatar username="drus unlimited"></drus-avatar>`
     );
 
     expect(el.shadowRoot.querySelector('.initials').innerText).to.equal('DU');
+  });
+
+  it('show two capitalized initials based on one word username property', async () => {
+    const el = await fixture(html`<drus-avatar username="drus"></drus-avatar>`);
+
+    expect(el.shadowRoot.querySelector('.initials').innerText).to.equal('D');
+  });
+
+  it('show two capitalized initials based on one word and trail space username property', async () => {
+    const el = await fixture(
+      html`<drus-avatar username="drus "></drus-avatar>`
+    );
+
+    expect(el.shadowRoot.querySelector('.initials').innerText).to.equal('D');
+  });
+
+  it('show two capitalized initials based on one word and trail space username property', async () => {
+    const el = await fixture(
+      html`<drus-avatar username=" drus  "></drus-avatar>`
+    );
+
+    expect(el.shadowRoot.querySelector('.initials').innerText).to.equal('D');
   });
 
   it('passes the a11y audit', async () => {

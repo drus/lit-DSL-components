@@ -36,7 +36,10 @@ export class DrusAvatar extends LitElement {
     const words = this.username
       ? this.username.toUpperCase().split(' ').slice(0, 2)
       : '';
-    const initials = [...words].reduce(
+
+    const safeWords = [...words].filter(word => !!word && word !== ' ');
+
+    const initials = safeWords.reduce(
       (accumulator, word) => accumulator + [...word][0],
       ''
     );
@@ -45,12 +48,11 @@ export class DrusAvatar extends LitElement {
 
   render() {
     return html`
-      <style>
-        span {
-          --drus-avatar-color: ${this._hexColor};
-        }
-      </style>
-      <span class="wrapper" title="${this.username}">
+      <span
+        class="wrapper"
+        title="${this.username}"
+        style="--drus-avatar-color: ${this._hexColor}"
+      >
         <span class="initials">${this._initialCharacters || '·'}</span>
       </span>
     `;
