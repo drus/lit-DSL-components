@@ -5,18 +5,17 @@ import '../drus-avatar.js';
 describe('DrusAvatar + size', () => {
   const elementFixture = size =>
     fixture(
-      size ?
-      `<drus-avatar username="drus unlimited" size="${size}"></drus-avatar>`
-      : `<drus-avatar username="drus unlimited"></drus-avatar>`
+      size
+        ? `<drus-avatar username="drus unlimited" size="${size}"></drus-avatar>`
+        : `<drus-avatar username="drus unlimited"></drus-avatar>`
     );
 
-    it('renders size S correctly', async () => {
-      const el = await elementFixture('S');
-      expect(el).shadowDom.to.equalSnapshot();
-      expect(el).lightDom.to.equalSnapshot();
-      expect(el).dom.to.equalSnapshot();
-    });
-
+  it('renders size S correctly', async () => {
+    const el = await elementFixture('S');
+    expect(el).shadowDom.to.equalSnapshot();
+    expect(el).lightDom.to.equalSnapshot();
+    expect(el).dom.to.equalSnapshot();
+  });
 
   it('renders size M correctly', async () => {
     const el = await elementFixture('M');
@@ -45,11 +44,7 @@ describe('DrusAvatar + size', () => {
     expect(el).lightDom.to.equalSnapshot();
     expect(el).dom.to.equalSnapshot();
   });
-
 });
-
-
-
 
 /*
 
