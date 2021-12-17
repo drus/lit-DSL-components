@@ -13,34 +13,6 @@ describe('DrusAvatar', () => {
     expect(el.shadowRoot.querySelector('.initials').innerText).to.equal('DU');
   });
 
-  it('renders size S correctly', async () => {
-    const el = await fixture(
-      `<drus-avatar username="drus unlimited" size="S"></drus-chip>`
-    );
-    expect(el).shadowDom.to.equalSnapshot();
-  });
-
-  it('renders size M correctly', async () => {
-    const el = await fixture(
-      `<drus-avatar username="drus unlimited" size="M"></drus-chip>`
-    );
-    expect(el).shadowDom.to.equalSnapshot();
-  });
-
-  it('renders size L correctly', async () => {
-    const el = await fixture(
-      `<drus-avatar username="drus unlimited" size="L"></drus-chip>`
-    );
-    expect(el).shadowDom.to.equalSnapshot();
-  });
-
-  it('renders size XL correctly', async () => {
-    const el = await fixture(
-      `<drus-avatar username="drus unlimited" size="XL"></drus-chip>`
-    );
-    expect(el).shadowDom.to.equalSnapshot();
-  });
-
   it('passes the a11y audit', async () => {
     const el = await fixture(html`<drus-avatar username="drus"></drus-avatar>`);
 
