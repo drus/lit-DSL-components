@@ -1,3 +1,3 @@
 # lit-DSL-components
 
-Lis Element DSL components with unit tests.
+Lit Element DSL components with unit tests.

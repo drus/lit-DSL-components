@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            background: #fafafa;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo"></div>
+
+    <script type="module">
+        import { html, render } from 'lit'; import '../drus-input-radio.js'; render( html`
+        <drus-input-radio label="Radio button control 1" NOid="radio-1" name="radio"></drus-input-radio>
+        <drus-input-radio label="Radio button control 2" NOid="radio-2" name="radio"></drus-input-radio>
+        <drus-input-radio label="Radio button control 3" NOid="radio-3" name="radio"></drus-input-radio> `, document.querySelector('#demo') );
+    </script>
+</body>
+
+</html>
