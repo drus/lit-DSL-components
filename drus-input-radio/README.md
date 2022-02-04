@@ -9,6 +9,20 @@ Hay atributos que son de grupo (name, required, disabled, size)
 
 ¿Creamos un componente wrapper radioGroup y subcomponentes radioItem?
 
+Aproximacion de tener el input en el light DOM (autogenerado por el componente?)
+https://sap.github.io/ui5-webcomponents/playground/components/RadioButton/
+
+Otra opción sería que el componente solo envolviera un input nativo y el consumidor tuviera que meterlo manualmente.
+<drus-input-radio>
+  <input type="radio" id="1" name="radiogroup">
+</drus-input-radio>
+<drus-input-radio>
+  <input type="radio" id="2" name="radiogroup">
+</drus-input-radio>
+<drus-input-radio>
+  <input type="radio" id="3" name="radiogroup">
+</drus-input-radio>
+
 ## API
 
 id:String

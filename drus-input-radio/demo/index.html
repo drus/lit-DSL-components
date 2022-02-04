@@ -7,17 +7,28 @@
         body {
             background: #fafafa;
         }
+        
+        drus-input-radio {
+            display: block;
+            margin-bottom: 12px;
+        }
     </style>
 </head>
 
 <body>
+    <p><button>start</button></p>
     <div id="demo"></div>
+    <p><button>end</button></p>
 
     <script type="module">
         import { html, render } from 'lit'; import '../drus-input-radio.js'; render( html`
-        <drus-input-radio label="Radio button control 1" NOid="radio-1" name="radio"></drus-input-radio>
-        <drus-input-radio label="Radio button control 2" NOid="radio-2" name="radio"></drus-input-radio>
-        <drus-input-radio label="Radio button control 3" NOid="radio-3" name="radio"></drus-input-radio> `, document.querySelector('#demo') );
+
+        <div aria-labelledby="radioGroupTitle1" role="radiogroup" id="radioGroup" class="radio-button-group">
+            <drus-input-radio label="Radio button control 1" id="radio-1" name="radioGroup"></drus-input-radio>
+            <drus-input-radio label="Radio button control 2" id="radio-2" name="radioGroup"></drus-input-radio>
+            <drus-input-radio label="Radio button control 3" id="radio-3" name="radioGroup"></drus-input-radio>
+        </div>
+        `, document.querySelector('#demo') );
     </script>
 </body>
 
