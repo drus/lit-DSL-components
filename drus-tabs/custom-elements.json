@@ -1,0 +1,229 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "drus-tabs.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "drus-tabs",
+          "declaration": {
+            "name": "DrusTabs",
+            "module": "/src/DrusTabs.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "drus-scrollable-container",
+          "declaration": {
+            "name": "DrusScrollableContainer",
+            "module": "/src/DrusScrollableContainer.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DrusTabs",
+          "declaration": {
+            "name": "DrusTabs",
+            "module": "./src/DrusTabs.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/DrusScrollableContainer.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "DrusScrollableContainer",
+          "members": [
+            {
+              "kind": "field",
+              "name": "_previousButton"
+            },
+            {
+              "kind": "field",
+              "name": "_nextButton"
+            },
+            {
+              "kind": "field",
+              "name": "_content"
+            },
+            {
+              "kind": "method",
+              "name": "_computePaginationButtonsVisibility"
+            },
+            {
+              "kind": "method",
+              "name": "_onResize"
+            },
+            {
+              "kind": "method",
+              "name": "_onScroll"
+            },
+            {
+              "kind": "method",
+              "name": "_onStartButtonClick"
+            },
+            {
+              "kind": "method",
+              "name": "_onEndButtonClick"
+            },
+            {
+              "kind": "field",
+              "name": "overflow",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "privacy": "public",
+              "attribute": "overflow"
+            },
+            {
+              "kind": "field",
+              "name": "startButtonVisible",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "privacy": "public",
+              "attribute": "startButtonVisible"
+            },
+            {
+              "kind": "field",
+              "name": "endButtonVisible",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "privacy": "public",
+              "attribute": "endButtonVisible"
+            },
+            {
+              "kind": "field",
+              "name": "_onResize"
+            },
+            {
+              "kind": "field",
+              "name": "_onScroll"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "overflow",
+              "fieldName": "overflow"
+            },
+            {
+              "name": "startButtonVisible",
+              "fieldName": "startButtonVisible"
+            },
+            {
+              "name": "endButtonVisible",
+              "fieldName": "endButtonVisible"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "drus-scrollable-container",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DrusScrollableContainer",
+          "declaration": {
+            "name": "DrusScrollableContainer",
+            "module": "src/DrusScrollableContainer.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/DrusTabs.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "DrusTabs",
+          "members": [
+            {
+              "kind": "field",
+              "name": "grow",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "privacy": "public",
+              "attribute": "grow"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "grow",
+              "fieldName": "grow"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "drus-tabs",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DrusTabs",
+          "declaration": {
+            "name": "DrusTabs",
+            "module": "src/DrusTabs.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "stories/index.stories.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Default"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "stories/index.stories.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Default",
+          "declaration": {
+            "name": "Default",
+            "module": "stories/index.stories.js"
+          }
+        }
+      ]
+    }
+  ]
+}

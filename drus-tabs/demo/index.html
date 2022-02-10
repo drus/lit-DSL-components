@@ -4,15 +4,21 @@
   <meta charset="utf-8">
   <style>
     body {
-      background: #fafafa;
+      background: #fff;
+    }
+    #demo{
+      /* max-width: 400px; */
     }
     button{
       display: flex;
       flex-shrink: 0;
       background: none;
       border: none;
-      border-bottom: 2px solid #000;
-      padding: 4px 8px;
+      color:#212121;
+      border-bottom: 2px solid #999;
+      padding: 8px 12px;
+      justify-content: center;
+
     }
   </style>
 </head>
@@ -26,15 +32,10 @@
     render(
       html`
         <drus-tabs grow>
-          <button class="tab">Una tab</button>
-          <button class="tab">Otra tab</button>
-          <button class="tab">Otra tab</button>
-          <button class="tab">Otra tab</button>
-          <button class="tab">Otra tab</button>
-          <button class="tab">Otra tab</button>
-          <button class="tab">Otra tab</button>
-          <button class="tab">Otra tab</button>
-          <button class="tab">Otra tab</button>
+          <button class="tab">1 Una tab</button>
+          <button class="tab">2 Otra tab</button>
+          <button class="tab">3 Otra tab</button>
+          <button class="tab">4 Otra tab</button>
         </drus-tabs>
       `,
       document.querySelector('#demo')
