@@ -1,6 +1,11 @@
 import { html, css, LitElement, render as lightRender } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
 
+/* Versión lightDOM
+  usa createRenderRoot para no usar el shadowDOM
+  y que todo esté disponible en el DOM
+  (funciona de forma nativa pero expone todo)
+ */
 
 export class DrusInputRadioA extends LitElement {
     static get styles() {
@@ -11,6 +16,11 @@ export class DrusInputRadioA extends LitElement {
         border:1px solid cornflowerblue;
         border-radius:6px;
       }
+
+      input{
+        margin-right:10px;
+      }
+
       .selected{
         background-color:aliceblue;
       }
@@ -59,7 +69,7 @@ export class DrusInputRadioA extends LitElement {
         return html `
         <label for="${this.radioId}" class=${classMap(classes)} >
           <input type="radio" name="${this.name}" id="${this.radioId}" ?checked="${this.checked}" />
-          ${this.label}
+          ${this.label} [${this.checked}]
         </label>
     `;
 

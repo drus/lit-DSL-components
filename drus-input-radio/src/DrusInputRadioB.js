@@ -1,23 +1,29 @@
 import { html, css, LitElement, render as lightRender } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
 
+/* Versión mixta
+  usa el método render para inyectar el input y que esté disponible en el DOM<br>
+  No hay buena solución para conectar el estado checked del componente (en este caso el blur)
+  Funciona de forma nativa, pero mal
+ */
 
 export class DrusInputRadioB extends LitElement {
     static get styles() {
-        return css `
-      :host label {
-        display:flex;
-        padding:10px;
-        border:1px solid cornflowerblue;
-        border-radius:6px;
-      }
-      input{
-        opacity:0.3;
-      }
-      .selected{
-        background-color:aliceblue;
-      }
-    `;
+      return css `
+        :host label {
+          display:flex;
+          padding:10px;
+          border:1px solid cornflowerblue;
+          border-radius:6px;
+        }
+        ::slotted(input){
+          margin-right:10px;
+        }
+        .selected{
+          background-color:cornflowerblue;
+          color:white;
+        }
+      `;
     }
 
     static get properties() {
