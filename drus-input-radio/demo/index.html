@@ -7,7 +7,7 @@
         body {
             background: #fafafa;
         }
-        
+
         drus-input-radio {
             display: block;
             margin-bottom: 12px;
@@ -16,20 +16,22 @@
 </head>
 
 <body>
+    <script type="module">
+        import '../index.js';
+    </script>
     <p><button>start</button></p>
-    <div id="demo"></div>
+    <!-- <div aria-labelledby="radioGroupTitle1" role="radiogroup" id="radioGroup" class="radio-button-group"> -->
+    <drus-input-radio-a label="Radio button control a 1" radio-id="radio-a1" name="radioGroupA" checked></drus-input-radio-a>
+    <drus-input-radio-a label="Radio button control a 2" radio-id="radio-a2" name="radioGroupA"></drus-input-radio-a>
+    <drus-input-radio-a label="Radio button control a 3" radio-id="radio-a3" name="radioGroupA"></drus-input-radio-a>
+
+    <!-- </div> -->
     <p><button>end</button></p>
 
-    <script type="module">
-        import { html, render } from 'lit'; import '../drus-input-radio.js'; render( html`
+    <drus-input-radio-b label="Radio button control b 1" radio-id="radio-b1" name="radioGroupB" checked></drus-input-radio-b>
+    <drus-input-radio-b label="Radio button control b 2" radio-id="radio-b2" name="radioGroupB"></drus-input-radio-b>
+    <drus-input-radio-b label="Radio button control b 3" radio-id="radio-b3" name="radioGroupB"></drus-input-radio-b>
 
-        <div aria-labelledby="radioGroupTitle1" role="radiogroup" id="radioGroup" class="radio-button-group">
-            <drus-input-radio label="Radio button control 1" id="radio-1" name="radioGroup"></drus-input-radio>
-            <drus-input-radio label="Radio button control 2" id="radio-2" name="radioGroup"></drus-input-radio>
-            <drus-input-radio label="Radio button control 3" id="radio-3" name="radioGroup"></drus-input-radio>
-        </div>
-        `, document.querySelector('#demo') );
-    </script>
 </body>
 
 </html>
