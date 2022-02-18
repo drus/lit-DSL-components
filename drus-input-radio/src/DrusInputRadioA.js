@@ -4,13 +4,16 @@ import { classMap } from 'lit/directives/class-map.js';
 /* Versión lightDOM
   usa createRenderRoot para no usar el shadowDOM
   y que todo esté disponible en el DOM
-  (funciona de forma nativa pero expone todo)
+  (funciona de forma nativa pero expone todo y noi se le puede dar estilos privados)
  */
 
 export class DrusInputRadioA extends LitElement {
     static get styles() {
         return css `
-      :host label {
+        host{
+          background-color:red;
+        }
+      label {
         display:flex;
         padding:10px;
         border:1px solid cornflowerblue;
@@ -22,7 +25,7 @@ export class DrusInputRadioA extends LitElement {
       }
 
       .selected{
-        background-color:aliceblue;
+        background-color:cornflowerblue;
       }
     `;
     }

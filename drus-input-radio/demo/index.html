@@ -8,7 +8,10 @@
             background: #fafafa;
         }
 
-        drus-input-radio-a, drus-input-radio-b {
+        drus-input-radio-a,
+        drus-input-radio-b,
+        drus-input-radio-c,
+        drus-input-radio-d {
             display: block;
             margin-bottom: 12px;
         }
@@ -19,31 +22,68 @@
     <script type="module">
         import '../index.js';
     </script>
+
+    <fieldset>
+        <legend>Estándar</legend>
+        <label for="standard1">
+            <input type="radio" name="standard" id="standard1" checked />
+            Radio estandar 1
+        </label>
+        <label for="standard2">
+            <input type="radio" name="standard" id="standard2" />
+            Radio estandar 2
+        </label>
+        <label for="standard3">
+            <input type="radio" name="standard" id="standard3" />
+            Radio estandar 3
+        </label>
+    </fieldset>
     <p><button>button</button></p>
 
     <fieldset>
-          <legend><strong>Versión lightDOM</strong>: declaramos el método createRenderRoot para no usar el shadowDOM y que todo esté disponible en el DOM.<br>
+        <legend><strong>Versión lightDOM</strong>: declaramos el método createRenderRoot para no usar el shadowDOM y que todo esté disponible en el DOM.<br>
             <small>(funciona de forma nativa pero expone todo)</small>
-          </legend>
-          <drus-input-radio-a label="Radio button control a 1" radio-id="radio-a1" name="radioGroupA" checked></drus-input-radio-a>
-          <drus-input-radio-a label="Radio button control a 2" radio-id="radio-a2" name="radioGroupA"></drus-input-radio-a>
-          <drus-input-radio-a label="Radio button control a 3" radio-id="radio-a3" name="radioGroupA"></drus-input-radio-a>
-        </fieldset>
+        </legend>
+        <drus-input-radio-a label="Radio button control a 1" radio-id="radio-a1" name="radioGroupA" checked></drus-input-radio-a>
+        <drus-input-radio-a label="Radio button control a 2" radio-id="radio-a2" name="radioGroupA"></drus-input-radio-a>
+        <drus-input-radio-a label="Radio button control a 3" radio-id="radio-a3" name="radioGroupA"></drus-input-radio-a>
+    </fieldset>
 
     <!-- </div> -->
     <p><button>button</button></p>
 
-<fieldset>
-  <legend><strong>Versión mixta</strong>
-    usa el método render para inyectar el input y que esté disponible en el DOM<br>
-    No hay buena solución para conectar el estado checked del componente (en este caso el blur)<br>
-    <small>(Funciona de forma nativa, pero mal)</small></legend>
-  <drus-input-radio-b label="Radio button control b 1" radio-id="radio-b1" name="radioGroupB" checked></drus-input-radio-b>
-  <drus-input-radio-b label="Radio button control b 2" radio-id="radio-b2" name="radioGroupB"></drus-input-radio-b>
-  <drus-input-radio-b label="Radio button control b 3" radio-id="radio-b3" name="radioGroupB"></drus-input-radio-b>
-</fieldset>
+    <fieldset>
+        <legend><strong>Versión mixta</strong> usa el método render para inyectar el input y que esté disponible en el DOM<br> No hay buena solución para conectar el estado checked del componente (en este caso el blur)<br>
+            <small>(Funciona de forma nativa, pero mal)</small></legend>
+        <drus-input-radio-b label="Radio button control b 1" radio-id="radio-b1" name="radioGroupB" checked></drus-input-radio-b>
+        <drus-input-radio-b label="Radio button control b 2" radio-id="radio-b2" name="radioGroupB"></drus-input-radio-b>
+        <drus-input-radio-b label="Radio button control b 3" radio-id="radio-b3" name="radioGroupB"></drus-input-radio-b>
+    </fieldset>
 
-<p><button>button</button></p>
+    <p><button>button</button></p>
+
+    <fieldset>
+        <legend><strong>Versión shadowDOM</strong></legend>
+        <drus-radio-group>
+            <drus-input-radio-c label="Radio button control c 1" radio-id="radio-c1" name="radioGroupC" value="value-c1"></drus-input-radio-c>
+            <drus-input-radio-c label="Radio button control c 2" radio-id="radio-c2" name="radioGroupC" value="value-c2" checked></drus-input-radio-c>
+            <drus-input-radio-c label="Radio button control c 3" radio-id="radio-c3" name="radioGroupC" value="value-c3"></drus-input-radio-c>
+        </drus-radio-group>
+    </fieldset>
+
+    <p><button>button</button></p>
+
+    <fieldset>
+        <legend><strong>Versión shadowDOM</strong></legend>
+        <drus-radio-group-d>
+            <drus-input-radio-d label="Radio button control d 1" radio-id="radio-d1" name="radioGroupD" value="value-d1"></drus-input-radio-d>
+            <drus-input-radio-d label="Radio button control d 2" radio-id="radio-d2" name="radioGroupD" value="value-d2" checked></drus-input-radio-d>
+            <drus-input-radio-d label="Radio button control d 3" radio-id="radio-d3" name="radioGroupD" value="value-d3"></drus-input-radio-d>
+        </drus-radio-group-d>
+    </fieldset>
+
+    <p><button>button</button></p>
+
 
 </body>
 

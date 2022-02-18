@@ -1,31 +1,30 @@
-export class DrusRadioGroup {
+import { html, css, LitElement } from 'lit';
 
-    // create group
 
-    static createGroup(name) {
-        this.groups = this.groups || {};
-        this.groups[name] = this.groups[name] || [];
+export class DrusRadioGroup extends LitElement {
+
+    _onChange({ target }) {
+        // console.log('selected', selected);
+
+        if (this.selected) {
+            this.selected.deSelect();
+        }
+
+        // console.log('new selection', target);
     }
 
-    static getSelected(name) {
-        return this.groups[name].filter(radio => radio.checked);
+    get selected() {
+        return this.querySelector(`[checked]`);
+    }
+
+    get value() {
+        return this.selected.value;
     }
 
 
 
-    // sync group
-    static syncGroup(name, radio) {
-        const radios = this.groups[name];
-        radios.filter
+    render() {
+        return html `<slot @change=${this._onChange}></slot>`;
     }
-
-
-
-    // add radio to group
-    static addRadio(name, radio) {
-        const group = this.groups[name];
-        group.push(radio);
-    }
-
 
 }

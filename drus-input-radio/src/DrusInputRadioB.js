@@ -9,16 +9,18 @@ import { classMap } from 'lit/directives/class-map.js';
 
 export class DrusInputRadioB extends LitElement {
     static get styles() {
-      return css `
+        return css `
         :host label {
           display:flex;
           padding:10px;
           border:1px solid cornflowerblue;
           border-radius:6px;
         }
+
         ::slotted(input){
           margin-right:10px;
         }
+
         .selected{
           background-color:cornflowerblue;
           color:white;
@@ -71,13 +73,13 @@ export class DrusInputRadioB extends LitElement {
         // Listen radio deselection
         this.externalInput.addEventListener('blur', e => {
             this.checked = false; //e.target.checked;
-            console.log('e, this.checked', e, this.checked);
+            // console.log('e, this.checked', e, this.checked);
         });
 
         // Listen radio selection
         this.externalInput.addEventListener('change', (e) => {
             this.checked = true;
-            console.log('e, this.checked', e, this.checked);
+            // console.log('e, this.checked', e, this.checked);
 
         });
     }
