@@ -1,21 +1,37 @@
 import { html, css, LitElement, render as lightRender } from 'lit';
 
+const DRUS_INPUT_RADIO_SELECTED='inputSelected';
 
 export class DrusInputRadioD extends LitElement {
     static get styles() {
-        return css `
+        return css`
       :host {
         display: block;
       }
 
-      input{
-          /*visibility:hidden;*/
-          opacity:0.2;
+      button{
+          appearance:none;
+          background:none;
+          border:none;
+          display:block;
+          width:100%;
+      }
+
+
+    input{
+          opacity:0.5;
+          visibility:hidden;
           overflow:hidden;
           width:0;
           height:0;
           margin:0;
       }
+
+      ::slotted(input){
+          margin-right:5px;
+      }
+
+
 
       :host([checked]) label{
         background-color:cornflowerblue;
@@ -23,14 +39,10 @@ export class DrusInputRadioD extends LitElement {
       }
 
       :host label {
-        background-color:transparent;
-        border:none;
-        width:100%;
         display:flex;
         padding:10px;
         border:1px solid cornflowerblue;
         border-radius:6px;
-        padding:10px;
 
       }
 
@@ -69,71 +81,81 @@ export class DrusInputRadioD extends LitElement {
         this.checked = false;
 
         this._onSelected = this._onSelected.bind(this);
-        this._onFocus = this._onFocus.bind(this);
+        this._focusLightInput = this._focusLightInput.bind(this);
 
     }
 
-    firstUpdated() {
-
-        lightRender(this._inputTemplate, this);
-        this._nativeInput = this.querySelector('input');
-
-        this._nativeInput.addEventListener('change', this._onSelected);
-
-    }
-
-
-    _onSelected(e) {
-        this.select();
-    }
-
-
-    get _inputTemplate() {
-        return html `
+    get _lightInputTemplate() {
+        return html`
         <input type="radio" name=${this.name} id=${this.radioId} ?checked=${this.checked} .value=${this.value} />
         `;
     }
 
+    get _lightInput(){
+        return this.querySelector('input');
+    }
 
-    get _input() {
+    get _shadowInput() {
         return this.shadowRoot.querySelector('input');
     }
 
+    firstUpdated() {
+        lightRender(this._lightInputTemplate, this);
+
+        this._lightInput.addEventListener('change', this._onSelected);
+        this._lightInput.addEventListener('focus', this._onSelected);
+        this._shadowInput.addEventListener('focus', this._focusLightInput);
+    }
 
 
-    get checked() {
+    _onSelected(e) {
+        this.checked=true;
+    }
+
+
+    _updateInputsState(){
+        if(this._lightInput && this._shadowInput){
+            this._shadowInput.checked = this.checked;
+            this._lightInput.checked = this.checked;
+            if(this.checked){
+                this._focusLightInput();
+            }
+        }
+
+    }
+
+
+    get checked(){
         return this._checked;
     }
 
+
+
+    /*
+    es llamado
+    cuando se hace click en el componente
+    cuando el lightInput emite evento change
+    cuando el lightInput emite evento focus */
     set checked(value) {
         const oldValue = this._checked;
         this._checked = value;
 
         this.requestUpdate('checked', oldValue);
-    }
 
-    select() {
-        this.checked = true;
-        this._nativeInput.checked = true;
-        this._input.checked = true;
+        this._updateInputsState();
 
-        this.dispatchEvent(new Event('inputSelected', { bubbles: true }));
-    }
-
-    deSelect() {
-        // console.log('deselecting ', this.radioId);
-        this.checked = false;
-
-        this._nativeInput.checked = false;
-        this._input.checked = false;
+        if(this._checked && oldValue!==value){
+            this.dispatchEvent(new Event(DRUS_INPUT_RADIO_SELECTED, { bubbles: true }));
+        }
     }
 
 
-
-    // si mi radio recibe el foco se lo paso al nativo
-    _onFocus(e) {
-        this._nativeInput.focus(e);
+    /* setea el foco en el lightInput para aprovechar el funcionamiento nativo     */
+    _focusLightInput(){
+        this._lightInput.focus();
     }
+
+
 
 
 
@@ -141,20 +163,20 @@ export class DrusInputRadioD extends LitElement {
     render() {
 
         return html `
+            <label for=${this.radioId}
+            @focus=${this._focusLightInput}>
+            <input
+                type="radio"
+                name=${this.name}
+                id=${this.radioId}
+                .value=${this.value}
+                @change=${this._onSelected}
 
-        <label for=${this.radioId} tabIndex="-1">
-        <input
-            type="radio"
-            name=${this.name}
-            id=${this.radioId}
-            .value=${this.value}
-            ?checked=${this.checked}
-            @change=${this._onSelected}
-            @focus=${this._onFocus}
-            />
-            <slot></slot>
-            ${this.label}
-        </label>`;
+                />
+                <slot></slot>
+                ${this.label}
+            </label>
+        `;
 
     }
 }
